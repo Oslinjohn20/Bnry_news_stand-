@@ -21,6 +21,7 @@
 					<i v-else class="fas fa-image"></i>
 				</header>
 				<section v-html="article.title"></section>
+
 				<footer>
 					<i class="fas fa-chevron-right"></i>
 				</footer>
@@ -37,7 +38,6 @@
 		props: ["apiKey"],
 		data: () => {
 			return {
-				apiUrl: "51fe3254e2a44244b5196a7c986c5954",
 				isBusy: false,
 				showloader: false,
 				currentPage: 1,
@@ -135,6 +135,20 @@
 <style lang="scss" scoped>
 	.container {
 		position: relative;
+		background: linear-gradient(-45deg, #f1d3ca, #ecafc6, #98ebd7);
+		background-size: 400% 400%;
+		animation: gradient 15s ease infinite;
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
 
 		.searchbar {
 			position: absolute;
@@ -142,8 +156,8 @@
 			left: 0;
 			right: 0;
 			width: 100%;
-			height: 60px;
-			font-size: 1.6rem;
+			height: 80px;
+			font-size: 2rem;
 			input {
 				padding: 0 100px 0 20px;
 				margin: 0;
@@ -174,17 +188,21 @@
 		}
 		article {
 			display: grid;
-			grid-template-columns: 200px auto 40px;
-			grid-template-rows: 100px;
-			border-bottom: 1px solid #ccc;
+			grid-template-columns: 150px auto 150px 140px;
+			grid-template-rows: 150px;
+			border-bottom: 1px solid #080808;
 			overflow: hidden;
 			cursor: pointer;
 			padding: 20px 20px;
+
 			header {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
+
+				max-width: 100%;
+				max-height: 100%;
 				img {
 					max-width: 100%;
 					height: auto;
@@ -202,8 +220,8 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				font-size: 1.6rem;
-				color: #888;
+				font-size: 2rem;
+				color: #080808;
 			}
 		}
 		#scroll-trigger {

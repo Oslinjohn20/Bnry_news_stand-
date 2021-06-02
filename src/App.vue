@@ -6,6 +6,7 @@
 
 <script>
 	import News from "./components/News.vue";
+	// import apiKey from "./constants";
 
 	export default {
 		name: "App",
@@ -16,6 +17,7 @@
 		},
 		components: {
 			News,
+			// apiKey,
 		},
 	};
 </script>
